@@ -1,0 +1,10 @@
+[Plugin]
+Loader=python3
+Module=indentnavigation
+IAge=3
+Name=Indent Navigation
+Description=Navigation between lines based on their indent level
+Authors=zb3
+Copyright=Copyright © 2019 zb3
+Website=http://www.gedit.org
+Version=3.34.0
