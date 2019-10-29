@@ -6,7 +6,7 @@ This is plugin adds the following bindings:
     <td style="white-space: nowrap;"><kbd>Ctrl</kbd> + Scroll&nbsp;Up/Down<br>
     <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Up</kbd> / <kbd>Down</kbd><br>
     <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + Left/Right click
-  <td>Jump to the previous/next line with the same or lower (whichever occurs first) indentation level as the current line.
+  <td>Jump to the previous/next line with the same or lower (whichever occurs first)<br>indentation level as the current line.
   <tr>
     <td style="white-space: nowrap;"><kbd>Shift</kbd> + <kbd>Alt</kbd> + Scroll&nbsp;Up/Down<br>
     <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>Up</kbd> / <kbd>Down</kbd><br>
