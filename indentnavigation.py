@@ -47,6 +47,7 @@ class IndentNavigationViewActivatable(GObject.Object, Gedit.ViewActivatable):
         navigate(view, direction, outer_level)
         return True
 
+    # this shouldn't exist, maybe replace with acceleators + actions
     def on_key_event(self, view, event):
         # is this mask still needed?
         modifiers = event.state & Gtk.accelerator_get_default_mod_mask()
@@ -64,14 +65,17 @@ class IndentNavigationViewActivatable(GObject.Object, Gedit.ViewActivatable):
         else:
             return False
 
-        if event.keyval == Gdk.KEY_Down:
-            direction = 1
-        elif event.keyval == Gdk.KEY_Up:
+        direction = 1
+        may_insert = False
+
+        if event.keyval == Gdk.KEY_Up:
             direction = -1
-        else:
+        elif not outer_level and event.keyval in (Gdk.KEY_Insert, Gdk.KEY_Right):
+            may_insert = True
+        elif event.keyval != Gdk.KEY_Down:
             return False
 
-        navigate(view, direction, outer_level)
+        navigate(view, direction, outer_level, may_insert)
         return True
 
     def on_button_event(self, view, event):
@@ -84,11 +88,14 @@ class IndentNavigationViewActivatable(GObject.Object, Gedit.ViewActivatable):
         else:
             return False
 
+        direction = 1
+        may_insert = False
+
         if event.button == 1:
             direction = -1
-        elif event.button == 3:
-            direction = 1
-        else:
+        elif not outer_level and event.button == 2:
+            may_insert = True
+        elif event.button != 3:
             return False
 
         # we get this event before cursor change
@@ -98,5 +105,5 @@ class IndentNavigationViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
         itr, _ = view.get_line_at_y(by)
 
-        navigate(view, direction, outer_level, itr)
+        navigate(view, direction, outer_level, may_insert, itr=itr)
         return True
