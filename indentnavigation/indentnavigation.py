@@ -1,11 +1,6 @@
-# -*- coding: utf8 -*-
-
-import gi
-gi.require_version('Gedit', '3.0')
-gi.require_version('Gtk', '3.0')
 from gi.repository import GObject, GLib, Gio, Gdk, Gtk, Gedit
 
-from core import navigate
+from .core import navigate
 
 
 class IndentNavigationViewActivatable(GObject.Object, Gedit.ViewActivatable):
@@ -107,3 +102,4 @@ class IndentNavigationViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
         navigate(view, direction, outer_level, may_insert, itr=itr)
         return True
+
