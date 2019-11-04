@@ -11,7 +11,10 @@ This is plugin adds the following bindings:
     <td style="white-space: nowrap;"><kbd>Shift</kbd> + <kbd>Alt</kbd> + Scroll&nbsp;Up/Down<br>
     <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>Up</kbd> / <kbd>Down</kbd><br>
     <kbd>Shift</kbd> + <kbd>Alt</kbd> + Left/Right click
-    <td>Jump to the previous/next line with an indentation level lower than the current line. 
+    <td>Jump to the previous/next line with an indentation level lower than the current line.
+  <tr>
+  <td style="white-space: nowrap;"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Insert</kbd><br>
+    <td>Try to jump to the next line with current indentation level, but if a line with lower<br> indentation level comes first, insert a new line with current indentation before that line<br> and any preceeding blank lines.
 </table>
 
 * Empty lines and lines containing only indentation characters are skipped.
