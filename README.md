@@ -28,4 +28,9 @@ This plugin is experimental and its behaviour may change (fork advised).
 1. Make sure your gedit version is up to date.
 2. Copy project folder to `~/.local/share/gedit/plugins`
 3. Enable `Indent Navigation` plugin.
-4. That's it :)
+4. If you're using GNOME, you might need to remap the `switch-to-workspace` binding to make <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Up</kbd> / <kbd>Down</kbd> work:
+   ```
+   gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Control><Alt>Page_Down']"
+   gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control><Alt>Page_Up']"
+   ```
+5. That's it :)
